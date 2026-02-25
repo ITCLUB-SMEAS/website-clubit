@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, Mail, User, MessageSquare, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
@@ -20,6 +20,28 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const firstInputRef = useRef<HTMLInputElement>(null);
+
+  // ESC key closes modal
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
+  // Lock body scroll and auto-focus first input when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      setTimeout(() => firstInputRef.current?.focus(), 100);
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,17 +51,18 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       await submitContact(formData);
       setIsSubmitted(true);
       toast.success("Message sent! We'll get back to you soon.");
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        onClose();
-      }, 2000);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to send message";
       toast.error(message);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleClose = () => {
+    setIsSubmitted(false);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    onClose();
   };
 
   const handleChange = (
@@ -56,9 +79,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-          onClick={onClose}
+          onClick={handleClose}
         >
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-modal-title"
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -69,12 +95,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             {/* Header */}
             <div className="relative bg-gradient-to-r from-sky-500 to-cyan-500 p-6">
               <button
-                onClick={onClose}
+                onClick={handleClose}
+                aria-label="Close"
                 className="absolute top-4 right-4 w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
               >
-                <X className="w-5 h-5 text-white" />
+                <X className="w-5 h-5 text-white" aria-hidden="true" />
               </button>
-              <h2 className="text-2xl font-bold text-white">Get in Touch</h2>
+              <h2 id="contact-modal-title" className="text-2xl font-bold text-white">Get in Touch</h2>
               <p className="text-sky-100 mt-1">
                 We&apos;d love to hear from you!
               </p>
@@ -89,25 +116,33 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   className="text-center py-8"
                 >
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                    <CheckCircle className="w-8 h-8 text-green-600" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 mb-6">
                     We&apos;ll get back to you soon.
                   </p>
+                  <button
+                    onClick={handleClose}
+                    className="px-6 py-2 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-colors"
+                  >
+                    Close
+                  </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Name
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 mb-1">
+                      Name <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <div className="relative">
-                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" aria-hidden="true" />
                       <input
+                        ref={firstInputRef}
+                        id="contact-name"
                         type="text"
                         name="name"
                         value={formData.name}
@@ -121,12 +156,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Email
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 mb-1">
+                      Email <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" aria-hidden="true" />
                       <input
+                        id="contact-email"
                         type="email"
                         name="email"
                         value={formData.email}
@@ -140,10 +176,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Subject
+                    <label htmlFor="contact-subject" className="block text-sm font-medium text-slate-700 mb-1">
+                      Subject <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <select
+                      id="contact-subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
@@ -161,12 +198,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
-                      Message
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 mb-1">
+                      Message <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <div className="relative">
-                      <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-slate-400" />
+                      <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-slate-400" aria-hidden="true" />
                       <textarea
+                        id="contact-message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}

@@ -365,6 +365,13 @@
       "sold": "sold"
     }
   },
+  "newsletter": {
+    "title": "Stay in the Loop",
+    "description": "Subscribe to our newsletter and never miss out on the latest events and workshops.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribed": "You're subscribed!"
+  },
   "contact": {
     "badge": "Get In Touch",
     "title": "Stay in the loop",

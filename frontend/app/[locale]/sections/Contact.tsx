@@ -5,16 +5,26 @@ import { Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
+import { subscribeNewsletter } from "../lib/api";
 
 export default function Contact() {
   const t = useTranslations("contact");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      toast.success("Thanks for subscribing!");
+    if (!email) return;
+    setIsLoading(true);
+    try {
+      await subscribeNewsletter(email);
+      toast.success(t("subscribe") + "! Thanks for subscribing.");
       setEmail("");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Subscription failed";
+      toast.error(message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -45,22 +55,31 @@ export default function Contact() {
           className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-12"
         >
           <div className="flex-1 relative">
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" aria-hidden="true" />
             <input
+              id="contact-newsletter-email"
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t("emailPlaceholder")}
+              aria-label={t("emailPlaceholder")}
               className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
             />
           </div>
           <button
             type="submit"
-            className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+            disabled={isLoading}
+            className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {t("subscribe")}
-            <Send className="w-4 h-4" />
+            {isLoading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
+            ) : (
+              <>
+                {t("subscribe")}
+                <Send className="w-4 h-4" aria-hidden="true" />
+              </>
+            )}
           </button>
         </motion.form>
 
@@ -76,12 +95,12 @@ export default function Contact() {
             href="mailto:hello@itclub.id"
             className="flex items-center gap-2 text-slate-600 hover:text-sky-600 transition-colors"
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4" aria-hidden="true" />
             hello@itclub.id
           </a>
-          <span className="text-slate-300">|</span>
+          <span className="text-slate-300" aria-hidden="true">|</span>
           <span className="flex items-center gap-2 text-slate-600">
-            <MapPin className="w-4 h-4" />
+            <MapPin className="w-4 h-4" aria-hidden="true" />
             Jakarta, Indonesia
           </span>
         </motion.div>

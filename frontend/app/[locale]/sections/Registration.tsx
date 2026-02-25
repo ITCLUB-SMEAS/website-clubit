@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Send,
   CheckCircle,
+  Check,
   User,
   Mail,
   School,
@@ -39,6 +40,7 @@ const benefits = [
 
 // Floating Label Input Component
 function FloatingInput({
+  id,
   label,
   icon: Icon,
   type = "text",
@@ -46,6 +48,7 @@ function FloatingInput({
   value,
   onChange,
 }: {
+  id: string;
   label: string;
   icon: React.ElementType;
   type?: string;
@@ -65,12 +68,14 @@ function FloatingInput({
         }`}
       >
         <Icon
+          aria-hidden="true"
           className={`w-5 h-5 transition-colors ${
             isActive ? "text-sky-500" : "text-slate-400"
           }`}
         />
       </div>
       <input
+        id={id}
         type={type}
         required={required}
         value={value}
@@ -81,6 +86,7 @@ function FloatingInput({
         placeholder=" "
       />
       <label
+        htmlFor={id}
         className={`absolute left-12 transition-all duration-200 pointer-events-none ${
           isActive
             ? "top-2 text-xs text-sky-500 font-medium"
@@ -286,6 +292,7 @@ export default function Registration() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <FloatingInput
+                        id="reg-fullName"
                         label={t("form.fullName")}
                         icon={User}
                         required
@@ -293,6 +300,7 @@ export default function Registration() {
                         onChange={(v) => setFormData({ ...formData, fullName: v })}
                       />
                       <FloatingInput
+                        id="reg-email"
                         label={t("form.email")}
                         icon={Mail}
                         type="email"
@@ -304,6 +312,7 @@ export default function Registration() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <FloatingInput
+                        id="reg-school"
                         label={t("form.school")}
                         icon={School}
                         required
@@ -312,9 +321,10 @@ export default function Registration() {
                       />
                       <div className="relative">
                         <div className="absolute left-4 top-3">
-                          <BookOpen className="w-5 h-5 text-sky-500" />
+                          <BookOpen className="w-5 h-5 text-sky-500" aria-hidden="true" />
                         </div>
                         <select
+                          id="reg-grade"
                           required
                           value={formData.grade}
                           onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
@@ -326,7 +336,7 @@ export default function Registration() {
                           <option value="3">{t("form.year3")}</option>
                           <option value="4">{t("form.year4")}</option>
                         </select>
-                        <label className="absolute left-12 top-2 text-xs text-sky-500 font-medium pointer-events-none">
+                        <label htmlFor="reg-grade" className="absolute left-12 top-2 text-xs text-sky-500 font-medium pointer-events-none">
                           {t("form.grade")}
                         </label>
                       </div>
@@ -338,23 +348,27 @@ export default function Registration() {
                         {t("form.interests")}
                       </label>
                       <div className="flex flex-wrap gap-2">
-                        {interests.map((interest) => (
-                          <button
-                            key={interest}
-                            type="button"
-                            onClick={() => toggleInterest(interest)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                              formData.interests.includes(interest)
-                                ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
-                                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                            }`}
-                          >
-                            {formData.interests.includes(interest) && (
-                              <span className="mr-1">✓</span>
-                            )}
-                            {interest}
-                          </button>
-                        ))}
+                        {interests.map((interest) => {
+                          const isSelected = formData.interests.includes(interest);
+                          return (
+                            <button
+                              key={interest}
+                              type="button"
+                              onClick={() => toggleInterest(interest)}
+                              aria-pressed={isSelected}
+                              className={`inline-flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                                isSelected
+                                  ? "bg-sky-500 text-white shadow-md shadow-sky-500/25"
+                                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                              }`}
+                            >
+                              {isSelected && (
+                                <Check className="w-3.5 h-3.5" aria-hidden="true" />
+                              )}
+                              {interest}
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
 

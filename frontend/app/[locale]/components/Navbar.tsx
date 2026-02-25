@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ShoppingBag, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
@@ -15,14 +15,16 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const langRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
-    { name: t("home"), href: "#home" },
-    { name: t("about"), href: "#about" },
-    { name: t("team"), href: "#team" },
-    { name: t("projects"), href: "#projects" },
-    { name: t("gallery"), href: "#gallery" },
-    { name: t("blog"), href: "#blog" },
+    { name: t("home"), href: "#home", id: "home" },
+    { name: t("about"), href: "#about", id: "about" },
+    { name: t("team"), href: "#team", id: "team" },
+    { name: t("projects"), href: "#projects", id: "projects" },
+    { name: t("gallery"), href: "#gallery", id: "gallery" },
+    { name: t("blog"), href: "#blog", id: "blog" },
   ];
 
   useEffect(() => {
@@ -31,6 +33,50 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll spy — update active section based on viewport
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ESC key closes mobile menu and lang dropdown
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Click outside closes lang dropdown
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const switchLocale = (newLocale: string) => {
@@ -68,28 +114,43 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  className="text-slate-600 hover:text-slate-900 font-medium transition-colors text-sm"
-                  whileHover={{ y: -2 }}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id;
+                return (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    aria-current={isActive ? "location" : undefined}
+                    className={`relative font-medium transition-colors text-sm ${
+                      isActive ? "text-sky-600" : "text-slate-600 hover:text-slate-900"
+                    }`}
+                    whileHover={{ y: -2 }}
+                  >
+                    {link.name}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-sky-500 rounded-full"
+                      />
+                    )}
+                  </motion.a>
+                );
+              })}
             </div>
 
             {/* Cart, Language & CTA */}
             <div className="hidden md:flex items-center gap-4">
               {/* Language Switcher */}
-              <div className="relative">
+              <div className="relative" ref={langRef}>
                 <motion.button
                   onClick={() => setIsLangOpen(!isLangOpen)}
+                  aria-label="Switch language"
+                  aria-expanded={isLangOpen}
+                  aria-haspopup="listbox"
                   className="flex items-center gap-1.5 px-3 py-2 text-slate-600 hover:text-slate-900 transition-colors text-sm font-medium"
                   whileHover={{ y: -2 }}
                 >
-                  <Globe className="w-4 h-4" />
+                  <Globe className="w-4 h-4" aria-hidden="true" />
                   <span className="uppercase">{locale}</span>
                 </motion.button>
                 
@@ -141,12 +202,15 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
               className="md:hidden p-2"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-slate-900" />
+                <X className="w-6 h-6 text-slate-900" aria-hidden="true" />
               ) : (
-                <Menu className="w-6 h-6 text-slate-900" />
+                <Menu className="w-6 h-6 text-slate-900" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -157,6 +221,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -195,19 +260,25 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {navLinks.map((link, index) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg font-bold text-slate-900 py-2 border-b border-slate-100"
-                  >
-                    {link.name}
-                  </motion.a>
-                ))}
+                {navLinks.map((link, index) => {
+                  const isActive = activeSection === link.id;
+                  return (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
+                      aria-current={isActive ? "location" : undefined}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`text-lg font-bold py-2 border-b border-slate-100 ${
+                        isActive ? "text-sky-600" : "text-slate-900"
+                      }`}
+                    >
+                      {link.name}
+                    </motion.a>
+                  );
+                })}
                 <motion.a
                   href="#merchandise"
                   initial={{ opacity: 0, x: 20 }}

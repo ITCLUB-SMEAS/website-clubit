@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 import { subscribeNewsletter } from "../lib/api";
 
 export default function Newsletter() {
+  const t = useTranslations("newsletter");
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,24 +38,26 @@ export default function Newsletter() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h2 className="text-5xl md:text-6xl font-black text-yellow-900 mb-6">
-          Stay in the Loop
+          {t("title")}
         </h2>
         <p className="text-xl text-yellow-800 mb-10 max-w-2xl mx-auto">
-          Subscribe to our newsletter and never miss out on the latest events and workshops.
+          {t("description")}
         </p>
 
         {isSubscribed ? (
           <div className="flex items-center justify-center gap-3 text-yellow-900">
-            <CheckCircle className="w-8 h-8" />
-            <span className="text-xl font-bold">You&apos;re subscribed!</span>
+            <CheckCircle className="w-8 h-8" aria-hidden="true" />
+            <span className="text-xl font-bold">{t("subscribed")}</span>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
             <input
+              id="newsletter-email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder={t("emailPlaceholder")}
+              aria-label={t("emailPlaceholder")}
               required
               className="flex-1 px-6 py-4 bg-white rounded-full text-slate-900 placeholder-slate-400 font-medium focus:outline-none focus:ring-4 focus:ring-yellow-500/30"
             />
@@ -63,11 +67,11 @@ export default function Newsletter() {
               className="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
               ) : (
                 <>
-                  Subscribe
-                  <Send className="w-5 h-5" />
+                  {t("subscribe")}
+                  <Send className="w-5 h-5" aria-hidden="true" />
                 </>
               )}
             </button>

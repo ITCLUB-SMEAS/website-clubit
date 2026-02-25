@@ -365,6 +365,13 @@
       "sold": "terjual"
     }
   },
+  "newsletter": {
+    "title": "Tetap Update",
+    "description": "Berlangganan newsletter kami dan jangan lewatkan acara serta workshop terbaru.",
+    "emailPlaceholder": "Masukkan email kamu",
+    "subscribe": "Berlangganan",
+    "subscribed": "Kamu sudah berlangganan!"
+  },
   "contact": {
     "badge": "Hubungi Kami",
     "title": "Tetap Terhubung",
