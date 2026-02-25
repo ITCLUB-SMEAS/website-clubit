@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "title": "IT Club SMEAS - Inovasi, Kreasi, Inspirasi",
+    "description": "Selamat datang di IT Club SMEAS - Komunitas pecinta teknologi, developer, dan inovator. Bergabunglah bersama kami untuk belajar, membangun, dan berkembang bersama."
+  },
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "team": "Tim",
+    "projects": "Proyek",
+    "gallery": "Galeri",
+    "blog": "Blog",
+    "events": "Acara",
+    "shop": "Toko",
+    "register": "Daftar"
+  },
+  "hero": {
+    "badge": "IT Club SMEAS",
+    "title1": "Semua yang Kamu Butuhkan",
+    "title2": "Untuk Mengembangkan",
+    "title3": "Skill Teknologi",
+    "description": "Bergabunglah dengan komunitas developer, desainer, dan pecinta teknologi yang bersemangat. Bangun proyek, pelajari skill baru, dan terhubung dengan profesional industri.",
+    "ctaPrimary": "Gabung Sekarang",
+    "ctaSecondary": "Jelajahi Proyek"
+  },
+  "about": {
+    "badge": "Tentang Kami",
+    "title": "Kami Adalah IT Club - Komunitas Pecinta Teknologi yang Didedikasikan untuk Belajar, Membangun, dan Berkembang Bersama",
+    "description": "Organisasi yang dipimpin siswa untuk mengembangkan bakat teknologi dan inovasi. Kami menyediakan pengalaman belajar praktis melalui workshop, proyek, dan kompetisi.",
+    "cta": "Gabung dengan Komunitas Kami",
+    "stats": {
+      "members": "Anggota",
+      "projects": "Proyek",
+      "workshops": "Workshop",
+      "partners": "Mitra"
+    }
+  },
+  "team": {
+    "badge": "Tim Kami",
+    "title": "Kenali Para Penggerak",
+    "subtitle": "Di Balik IT Club",
+    "filters": {
+      "all": "Semua",
+      "leadership": "Kepemimpinan",
+      "tech": "Teknologi",
+      "design": "Desain",
+      "marketing": "Marketing"
+    },
+    "role": {
+      "ketua": "Ketua",
+      "wakil": "Wakil Ketua",
+      "sekretaris": "Sekretaris",
+      "bendahara": "Bendahara"
+    },
+    "leadershipTitle": "Kepemimpinan",
+    "membersTitle": "Anggota Tim",
+    "viewProfile": "Lihat Profil",
+    "viewFullProfile": "Lihat Profil Lengkap",
+    "about": "Tentang",
+    "skills": "Keahlian",
+    "connect": "Terhubung"
+  },
+  "projects": {
+    "badge": "Karya Kami",
+    "title": "Proyek Unggulan",
+    "description": "Jelajahi proyek-proyek inovatif yang dibangun oleh anggota berbakat kami. Dari aplikasi web hingga solusi AI.",
+    "featured": "Unggulan",
+    "featuredProject": "Proyek Unggulan",
+    "allProjects": "Semua Proyek",
+    "viewGithub": "Lihat di GitHub",
+    "details": "Detail",
+    "liveDemo": "Demo Langsung",
+    "aboutProject": "Tentang Proyek",
+    "keyFeatures": "Fitur Utama",
+    "gallery": "Galeri Proyek",
+    "techStack": "Teknologi",
+    "team": "Tim",
+    "timeline": "Timeline",
+    "viewLiveDemo": "Lihat Demo Langsung",
+    "stars": "Stars",
+    "forks": "Forks",
+    "views": "Views",
+    "duration": "Durasi",
+    "year": "Tahun",
+    "durationLabel": "Durasi",
+    "filters": {
+      "all": "Semua Proyek",
+      "featured": "Unggulan"
+    },
+    "viewDetails": "Lihat Detail",
+    "github": "Lihat di GitHub"
+  },
+  "events": {
+    "badge": "Akan Datang",
+    "title": "Acara & Workshop",
+    "viewAll": "Lihat Semua Acara",
+    "categories": {
+      "all": "Semua Acara",
+      "workshop": "Workshop",
+      "hackathon": "Hackathon",
+      "seminar": "Seminar",
+      "competition": "Kompetisi"
+    },
+    "featuredEvent": "Acara Unggulan",
+    "almostFull": "Hampir Penuh!",
+    "startsIn": "Acara dimulai dalam:",
+    "viewDetails": "Lihat Detail",
+    "days": "Hari",
+    "hours": "Jam",
+    "mins": "Menit",
+    "secs": "Detik",
+    "about": "Tentang",
+    "agenda": "Agenda",
+    "whatYouWillGet": "Apa yang Kamu Dapatkan",
+    "speaker": "Pembicara",
+    "details": "Detail",
+    "registration": "Pendaftaran",
+    "spotsLeft": "slot tersisa",
+    "full": "Penuh",
+    "of": "dari",
+    "participants": "peserta",
+    "registered": "terdaftar",
+    "eventFull": "Acara Penuh",
+    "registerNow": "Daftar Sekarang",
+    "shareEvent": "Bagikan Acara",
+    "left": "tersisa",
+    "noEvents": "Tidak ada acara ditemukan",
+    "tryDifferentCategory": "Coba pilih kategori lain",
+    "registrationSuccess": "Pendaftaran berhasil! Cek email kamu untuk detail.",
+    "linkCopied": "Link acara disalin ke clipboard!"
+  },
+  "gallery": {
+    "badge": "Kenangan",
+    "title": "Galeri Foto",
+    "filters": {
+      "all": "Semua Foto",
+      "workshop": "Workshop",
+      "competition": "Kompetisi",
+      "seminar": "Seminar",
+      "social": "Sosial"
+    },
+    "loadMore": "Muat Lebih Banyak",
+    "viewAll": "Lihat Semua Foto",
+    "loading": "Memuat...",
+    "remaining": "tersisa",
+    "noPhotos": "Tidak ada foto ditemukan",
+    "tryDifferent": "Coba pilih kategori yang berbeda"
+  },
+  "blog": {
+    "badge": "Blog",
+    "title": "Artikel Terbaru",
+    "viewAll": "Lihat Semua Artikel",
+    "filters": {
+      "all": "Semua Artikel",
+      "tutorial": "Tutorial",
+      "ai": "AI & ML",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "career": "Karir"
+    },
+    "readTime": "mnt baca",
+    "readTimeShort": "m",
+    "readMore": "Baca Selengkapnya",
+    "loadMore": "Muat Lebih Banyak",
+    "loading": "Memuat...",
+    "remaining": "tersisa",
+    "featured": "Unggulan",
+    "noArticles": "Tidak ada artikel ditemukan",
+    "tryDifferentCategory": "Coba pilih kategori lain"
+  },
+  "testimonials": {
+    "badge": "Testimoni",
+    "title": "Apa Kata Mereka",
+    "description": "Dengarkan dari anggota kami yang telah mengubah karir mereka melalui IT Club",
+    "paused": "Dijeda",
+    "autoPlaying": "Putar Otomatis",
+    "stats": {
+      "members": "Anggota Puas",
+      "satisfaction": "Tingkat Kepuasan",
+      "companies": "Mitra Perusahaan",
+      "stories": "Kisah Sukses"
+    }
+  },
+  "alumni": {
+    "badge": "Kisah Sukses",
+    "title": "Alumni Kami",
+    "filters": {
+      "all": "Semua Tahun",
+      "label": "Filter:"
+    },
+    "memberSince": "Anggota sejak",
+    "classOf": "Angkatan",
+    "connect": "Terhubung",
+    "email": "Email",
+    "noAlumni": "Tidak ada alumni ditemukan untuk tahun ini",
+    "modal": {
+      "about": "Tentang",
+      "journey": "Perjalanan",
+      "advice": "Saran",
+      "connect": "Terhubung"
+    }
+  },
+  "partners": {
+    "badge": "Mitra Kami",
+    "title": "Dipercaya oleh Pemimpin Industri",
+    "description": "Kami berkolaborasi dengan perusahaan teknologi terkemuka untuk memberikan peluang terbaik kepada anggota kami.",
+    "cta": "Jadi Mitra"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Pertanyaan Umum",
+    "description": "Semua yang perlu kamu ketahui tentang IT Club",
+    "categories": {
+      "general": "Umum",
+      "membership": "Keanggotaan",
+      "events": "Acara",
+      "projects": "Proyek"
+    },
+    "items": {
+      "general": [
+        {
+          "question": "Bagaimana cara bergabung dengan IT Club?",
+          "answer": "Kamu bisa bergabung dengan mengisi formulir pendaftaran di website kami atau mengunjungi booth kami saat club fair. Kami menerima siswa dari semua tingkat keahlian dan latar belakang!"
+        },
+        {
+          "question": "Apakah saya perlu pengalaman programming sebelumnya?",
+          "answer": "Tidak sama sekali! IT Club terbuka untuk semua orang, dari pemula hingga developer berpengalaman. Kami menawarkan workshop yang ramah pemula dan program mentorship untuk membantu kamu memulai."
+        },
+        {
+          "question": "Kegiatan apa saja yang diadakan IT Club?",
+          "answer": "Kami mengadakan workshop coding, hackathon, tech talks, study groups, kolaborasi proyek, kunjungan industri, dan acara networking dengan para profesional."
+        }
+      ],
+      "membership": [
+        {
+          "question": "Berapa banyak waktu yang perlu saya komitmen?",
+          "answer": "Komitmen waktu sangat fleksibel. Sebagian besar anggota aktif menghabiskan 3-5 jam per minggu. Kamu bisa berpartisipasi sebanyak atau sesedikit yang diizinkan jadwal kamu."
+        },
+        {
+          "question": "Apakah ada biaya keanggotaan?",
+          "answer": "Keanggotaan dasar sepenuhnya gratis! Beberapa acara khusus mungkin memiliki biaya kecil untuk menutup materi, tetapi kami berusaha menjaga semuanya tetap terjangkau."
+        },
+        {
+          "question": "Bisakah saya bergabung dengan beberapa divisi?",
+          "answer": "Tentu saja! Kamu dipersilakan untuk berpartisipasi di beberapa divisi. Banyak anggota menjelajahi berbagai bidang sebelum berspesialisasi."
+        }
+      ],
+      "events": [
+        {
+          "question": "Bagaimana cara mendaftar untuk workshop?",
+          "answer": "Pendaftaran workshop dibuka melalui website kami. Anggota mendapatkan akses prioritas dan notifikasi. Cukup klik tombol daftar di halaman acara!"
+        },
+        {
+          "question": "Apakah acara diadakan online atau offline?",
+          "answer": "Kami menawarkan acara online dan offline. Workshop reguler diadakan di lab kampus kami, sementara beberapa sesi bersifat hybrid untuk mengakomodasi peserta jarak jauh."
+        },
+        {
+          "question": "Bisakah saya mendapatkan sertifikat untuk kehadiran?",
+          "answer": "Ya! Kami menyediakan sertifikat untuk sebagian besar workshop dan acara. Beberapa kursus lanjutan juga menawarkan sertifikat penyelesaian untuk LinkedIn atau portofolio kamu."
+        }
+      ],
+      "projects": [
+        {
+          "question": "Bisakah saya mengusulkan proyek saya sendiri?",
+          "answer": "Tentu saja! Kami mendorong anggota untuk mengusulkan proyek. Kamu bisa mempresentasikan ide kamu ke tim kepemimpinan, dan kami akan membantu kamu menemukan anggota tim dan sumber daya."
+        },
+        {
+          "question": "Teknologi apa yang digunakan dalam proyek?",
+          "answer": "Proyek kami menggunakan berbagai teknologi termasuk React, Next.js, Python, Node.js, Flutter, dan banyak lagi. Kamu bisa memilih teknologi yang sesuai dengan minat kamu."
+        },
+        {
+          "question": "Bisakah saya menambahkan proyek ke portofolio saya?",
+          "answer": "Ya! Semua proyek yang kamu kontribusikan bisa ditambahkan ke portofolio kamu. Kami juga memberikan panduan tentang cara mempresentasikan pekerjaan kamu secara profesional."
+        }
+      ]
+    },
+    "stillHaveQuestions": "Masih punya pertanyaan?",
+    "contactText": "Tidak menemukan jawaban yang kamu cari? Silakan hubungi tim kami.",
+    "emailUs": "Email Kami",
+    "whatsapp": "WhatsApp"
+  },
+  "registration": {
+    "badge": "Gabung Kami",
+    "title": "Mulai Perjalananmu",
+    "description": "Bergabunglah dengan 1000+ anggota yang sedang membangun masa depan di bidang teknologi",
+    "benefitsTitle": "Mengapa Bergabung dengan IT Club?",
+    "stats": {
+      "members": "Anggota",
+      "events": "Acara/Tahun",
+      "satisfaction": "Kepuasan"
+    },
+    "form": {
+      "fullName": "Nama Lengkap",
+      "email": "Alamat Email",
+      "school": "Sekolah/Universitas",
+      "grade": "Tahun Akademik",
+      "selectYear": "Pilih Tahun",
+      "year1": "Tahun 1",
+      "year2": "Tahun 2",
+      "year3": "Tahun 3",
+      "year4": "Tahun 4",
+      "interests": "Bidang yang Diminati",
+      "terms": "Saya setuju dengan Syarat Layanan dan Kebijakan Privasi",
+      "submit": "Gabung IT Club",
+      "loading": "Memproses...",
+      "success": "Selamat Datang di IT Club!",
+      "successMessage": "Periksa email kamu untuk langkah selanjutnya!",
+      "createAccount": "Buat Akun Kamu",
+      "registerAnother": "Daftar Lainnya",
+      "freeMembership": "Keanggotaan gratis • Tidak perlu kartu kredit"
+    },
+    "benefits": {
+      "networking": {
+        "title": "Jaringan",
+        "description": "Terhubung dengan 1000+ pecinta teknologi dan profesional industri"
+      },
+      "learning": {
+        "title": "Belajar dengan Praktik",
+        "description": "Workshop hands-on dan proyek dunia nyata setiap minggu"
+      },
+      "competitions": {
+        "title": "Kompetisi",
+        "description": "Ikuti hackathon dan menangkan hadiah serta pengakuan menakjubkan"
+      },
+      "career": {
+        "title": "Dukungan Karir",
+        "description": "Dapatkan mentorship, magang, dan peluang kerja"
+      }
+    }
+  },
+  "merchandise": {
+    "badge": "Toko",
+    "title": "Merchandise IT Club",
+    "description": "Dukung komunitas teknologi favoritmu dengan merchandise eksklusif kami.",
+    "addToCart": "Tambah ke Keranjang",
+    "viewAll": "Lihat Semua Produk",
+    "cart": "Keranjang",
+    "empty": "Keranjang kamu kosong",
+    "quickView": "Lihat Cepat",
+    "sold": "terjual",
+    "addedToCart": "{name} ditambahkan ke keranjang!",
+    "addedToWishlist": "Ditambahkan ke wishlist!",
+    "removedFromWishlist": "Dihapus dari wishlist!",
+    "categories": {
+      "all": "Semua",
+      "apparel": "Pakaian",
+      "accessories": "Aksesoris",
+      "bags": "Tas",
+      "stationery": "Alat Tulis"
+    },
+    "badges": {
+      "bestSeller": "Terlaris",
+      "new": "Baru",
+      "popular": "Populer",
+      "limited": "Terbatas"
+    },
+    "size": "Ukuran",
+    "color": "Warna",
+    "quantity": "Jumlah",
+    "product": {
+      "size": "Ukuran",
+      "color": "Warna",
+      "quantity": "Jumlah",
+      "addToCart": "Tambah ke Keranjang",
+      "sold": "terjual"
+    }
+  },
+  "contact": {
+    "badge": "Hubungi Kami",
+    "title": "Tetap Terhubung",
+    "description": "Berlangganan newsletter kami untuk update, acara, dan peluang terbaru.",
+    "emailPlaceholder": "Masukkan email kamu",
+    "subscribe": "Berlangganan",
+    "address": "Alamat",
+    "email": "Email",
+    "phone": "Telepon",
+    "workingHours": "Jam Kerja"
+  },
+  "footer": {
+    "tagline": "IT Club adalah cara terbaik untuk belajar, membangun, dan mengembangkan skill teknologi kamu.",
+    "products": "Produk",
+    "resources": "Sumber Daya",
+    "company": "Perusahaan",
+    "legal": "Hukum",
+    "copyright": "© 2025 IT Club SMEAS"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "description": "Ups! Sepertinya halaman ini sedang istirahat. Mari kembali ke jalur yang benar.",
+    "backHome": "Kembali ke Beranda",
+    "tryAgain": "Coba Lagi",
+    "funFactLabel": "Fakta Menarik:",
+    "funFact": "Bug komputer pertama adalah serangga sungguhan! Seekor ngengat ditemukan di komputer Harvard Mark II pada tahun 1947."
+  },
+  "common": {
+    "loading": "Memuat...",
+    "readMore": "Baca Selengkapnya",
+    "viewAll": "Lihat Semua",
+    "close": "Tutup",
+    "submit": "Kirim",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "create": "Buat",
+    "search": "Cari",
+    "filter": "Filter",
+    "sort": "Urutkan",
+    "showMore": "Tampilkan Lebih Banyak",
+    "showLess": "Tampilkan Lebih Sedikit",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "getStarted": "Mulai",
+    "joinNow": "Gabung Sekarang",
+    "explore": "Jelajahi",
+    "discover": "Temukan"
+  },
+  "error": {
+    "title": "Terjadi Kesalahan",
+    "description": "Terjadi kesalahan yang tidak terduga. Silakan coba lagi.",
+    "retry": "Coba lagi"
+  }
+}

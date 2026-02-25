@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "title": "IT Club SMEAS - Innovate, Create, Inspire",
+    "description": "Welcome to IT Club SMEAS - A community of tech enthusiasts, developers, and innovators. Join us to learn, build, and grow together."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "team": "Team",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "events": "Events",
+    "shop": "Shop",
+    "register": "Register"
+  },
+  "hero": {
+    "badge": "IT Club SMEAS",
+    "title1": "Everything You Need",
+    "title2": "To Grow Your",
+    "title3": "Tech Skills",
+    "description": "Join a community of passionate developers, designers, and tech enthusiasts. Build projects, learn new skills, and connect with industry professionals.",
+    "ctaPrimary": "Join Now",
+    "ctaSecondary": "Explore Projects"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "We Are IT Club - A Community of Tech Enthusiasts Dedicated to Learning, Building, and Growing Together",
+    "description": "A student-led organization dedicated to fostering tech talent and innovation. We provide hands-on learning experiences through workshops, projects, and competitions.",
+    "cta": "Join Our Community",
+    "stats": {
+      "members": "Members",
+      "projects": "Projects",
+      "workshops": "Workshops",
+      "partners": "Partners"
+    }
+  },
+  "team": {
+    "badge": "Our Team",
+    "title": "Meet The People",
+    "subtitle": "Behind IT Club",
+    "filters": {
+      "all": "All",
+      "leadership": "Leadership",
+      "tech": "Tech",
+      "design": "Design",
+      "marketing": "Marketing"
+    },
+    "role": {
+      "ketua": "Chairman",
+      "wakil": "Vice Chairman",
+      "sekretaris": "Secretary",
+      "bendahara": "Treasurer"
+    },
+    "leadershipTitle": "Leadership",
+    "membersTitle": "Team Members",
+    "viewProfile": "View Profile",
+    "viewFullProfile": "View Full Profile",
+    "about": "About",
+    "skills": "Skills",
+    "connect": "Connect"
+  },
+  "projects": {
+    "badge": "Our Work",
+    "title": "Featured Projects",
+    "description": "Explore the innovative projects built by our talented members. From web applications to AI solutions.",
+    "featured": "Featured",
+    "featuredProject": "Featured Project",
+    "allProjects": "All Projects",
+    "viewGithub": "View on GitHub",
+    "details": "Details",
+    "liveDemo": "Live Demo",
+    "aboutProject": "About the Project",
+    "keyFeatures": "Key Features",
+    "gallery": "Project Gallery",
+    "techStack": "Tech Stack",
+    "team": "Team",
+    "timeline": "Timeline",
+    "viewLiveDemo": "View Live Demo",
+    "stars": "Stars",
+    "forks": "Forks",
+    "views": "Views",
+    "duration": "Duration",
+    "year": "Year",
+    "durationLabel": "Duration",
+    "filters": {
+      "all": "All Projects",
+      "featured": "Featured"
+    },
+    "viewDetails": "View Details",
+    "github": "View on GitHub"
+  },
+  "events": {
+    "badge": "Upcoming",
+    "title": "Events & Workshops",
+    "viewAll": "View All Events",
+    "categories": {
+      "all": "All Events",
+      "workshop": "Workshop",
+      "hackathon": "Hackathon",
+      "seminar": "Seminar",
+      "competition": "Competition"
+    },
+    "featuredEvent": "Featured Event",
+    "almostFull": "Almost Full!",
+    "startsIn": "Event starts in:",
+    "viewDetails": "View Details",
+    "days": "Days",
+    "hours": "Hours",
+    "mins": "Mins",
+    "secs": "Secs",
+    "about": "About",
+    "agenda": "Agenda",
+    "whatYouWillGet": "What You'll Get",
+    "speaker": "Speaker",
+    "details": "Details",
+    "registration": "Registration",
+    "spotsLeft": "spots left",
+    "full": "Full",
+    "of": "of",
+    "participants": "participants",
+    "registered": "registered",
+    "eventFull": "Event Full",
+    "registerNow": "Register Now",
+    "shareEvent": "Share Event",
+    "left": "left",
+    "noEvents": "No events found",
+    "tryDifferentCategory": "Try selecting a different category",
+    "registrationSuccess": "Registration successful! Check your email for details.",
+    "linkCopied": "Event link copied to clipboard!"
+  },
+  "gallery": {
+    "badge": "Memories",
+    "title": "Photo Gallery",
+    "filters": {
+      "all": "All Photos",
+      "workshop": "Workshop",
+      "competition": "Competition",
+      "seminar": "Seminar",
+      "social": "Social"
+    },
+    "loadMore": "Load More",
+    "viewAll": "View All Photos",
+    "loading": "Loading...",
+    "remaining": "remaining",
+    "noPhotos": "No photos found",
+    "tryDifferent": "Try selecting a different category"
+  },
+  "blog": {
+    "badge": "Blog",
+    "title": "Latest Articles",
+    "viewAll": "View All Articles",
+    "filters": {
+      "all": "All Articles",
+      "tutorial": "Tutorial",
+      "ai": "AI & ML",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "career": "Career"
+    },
+    "readTime": "min read",
+    "readTimeShort": "m",
+    "readMore": "Read More",
+    "loadMore": "Load More Articles",
+    "loading": "Loading...",
+    "remaining": "remaining",
+    "featured": "Featured",
+    "noArticles": "No articles found",
+    "tryDifferentCategory": "Try selecting a different category"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What They Say",
+    "description": "Hear from our members who have transformed their careers through IT Club",
+    "paused": "Paused",
+    "autoPlaying": "Auto-playing",
+    "stats": {
+      "members": "Happy Members",
+      "satisfaction": "Satisfaction Rate",
+      "companies": "Partner Companies",
+      "stories": "Success Stories"
+    }
+  },
+  "alumni": {
+    "badge": "Success Stories",
+    "title": "Our Alumni",
+    "filters": {
+      "all": "All Years",
+      "label": "Filter:"
+    },
+    "memberSince": "Member since",
+    "classOf": "Class of",
+    "connect": "Connect",
+    "email": "Email",
+    "noAlumni": "No alumni found for this year",
+    "modal": {
+      "about": "About",
+      "journey": "Journey",
+      "advice": "Advice",
+      "connect": "Connect"
+    }
+  },
+  "partners": {
+    "badge": "Our Partners",
+    "title": "Trusted by Industry Leaders",
+    "description": "We collaborate with leading tech companies to bring the best opportunities to our members.",
+    "cta": "Become a Partner"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Common Questions",
+    "description": "Everything you need to know about IT Club",
+    "categories": {
+      "general": "General",
+      "membership": "Membership",
+      "events": "Events",
+      "projects": "Projects"
+    },
+    "items": {
+      "general": [
+        {
+          "question": "How can I join IT Club?",
+          "answer": "You can join IT Club by filling out the registration form on our website or visiting our booth during club fair. We welcome students of all skill levels and backgrounds!"
+        },
+        {
+          "question": "Do I need prior programming experience?",
+          "answer": "Not at all! IT Club is open to everyone, from complete beginners to experienced developers. We offer beginner-friendly workshops and mentorship programs to help you get started."
+        },
+        {
+          "question": "What activities does IT Club organize?",
+          "answer": "We organize coding workshops, hackathons, tech talks, study groups, project collaborations, industry visits, and networking events with professionals."
+        }
+      ],
+      "membership": [
+        {
+          "question": "How much time do I need to commit?",
+          "answer": "The time commitment is flexible. Most active members spend 3-5 hours per week. You can participate as much or as little as your schedule allows."
+        },
+        {
+          "question": "Is there a membership fee?",
+          "answer": "Basic membership is completely free! Some special events may have a small fee to cover materials, but we strive to keep everything accessible."
+        },
+        {
+          "question": "Can I join multiple divisions?",
+          "answer": "Absolutely! You're welcome to participate in multiple divisions. Many members explore different areas before specializing."
+        }
+      ],
+      "events": [
+        {
+          "question": "How do I register for workshops?",
+          "answer": "Workshop registrations open through our website. Members get priority access and notifications. Simply click the register button on the event page!"
+        },
+        {
+          "question": "Are events held online or offline?",
+          "answer": "We offer both online and offline events. Regular workshops are at our campus lab, while some sessions are hybrid to accommodate remote participants."
+        },
+        {
+          "question": "Can I get a certificate for attending?",
+          "answer": "Yes! We provide certificates for most workshops and events. Some advanced courses also offer completion certificates for your LinkedIn or portfolio."
+        }
+      ],
+      "projects": [
+        {
+          "question": "Can I propose my own project?",
+          "answer": "Absolutely! We encourage members to propose projects. You can pitch your idea to the leadership team, and we'll help you find team members and resources."
+        },
+        {
+          "question": "What technologies do projects use?",
+          "answer": "Our projects use a variety of technologies including React, Next.js, Python, Node.js, Flutter, and more. You can choose technologies that match your interests."
+        },
+        {
+          "question": "Can I add projects to my portfolio?",
+          "answer": "Yes! All projects you contribute to can be added to your portfolio. We also provide guidance on how to present your work professionally."
+        }
+      ]
+    },
+    "stillHaveQuestions": "Still have questions?",
+    "contactText": "Can't find the answer you're looking for? Please chat with our friendly team.",
+    "emailUs": "Email Us",
+    "whatsapp": "WhatsApp"
+  },
+  "registration": {
+    "badge": "Join Us",
+    "title": "Start Your Journey",
+    "description": "Join 1000+ members who are building their future in tech",
+    "benefitsTitle": "Why Join IT Club?",
+    "stats": {
+      "members": "Members",
+      "events": "Events/Year",
+      "satisfaction": "Satisfaction"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "school": "School/University",
+      "grade": "Academic Year",
+      "selectYear": "Select Year",
+      "year1": "Year 1",
+      "year2": "Year 2",
+      "year3": "Year 3",
+      "year4": "Year 4",
+      "interests": "Interested Fields",
+      "terms": "I agree to the Terms of Service and Privacy Policy",
+      "submit": "Join IT Club",
+      "loading": "Processing...",
+      "success": "Welcome to IT Club!",
+      "successMessage": "Check your email for next steps!",
+      "createAccount": "Create Your Account",
+      "registerAnother": "Register Another",
+      "freeMembership": "Free membership • No credit card required"
+    },
+    "benefits": {
+      "networking": {
+        "title": "Networking",
+        "description": "Connect with 1000+ tech enthusiasts and industry professionals"
+      },
+      "learning": {
+        "title": "Learn by Doing",
+        "description": "Hands-on workshops and real-world projects every week"
+      },
+      "competitions": {
+        "title": "Competitions",
+        "description": "Join hackathons and win amazing prizes and recognition"
+      },
+      "career": {
+        "title": "Career Support",
+        "description": "Get mentorship, internships, and job opportunities"
+      }
+    }
+  },
+  "merchandise": {
+    "badge": "Shop",
+    "title": "IT Club Merchandise",
+    "description": "Support your favorite tech community with our exclusive merchandise.",
+    "addToCart": "Add to Cart",
+    "viewAll": "View All Products",
+    "cart": "Cart",
+    "empty": "Your cart is empty",
+    "quickView": "Quick View",
+    "sold": "sold",
+    "addedToCart": "{name} added to cart!",
+    "addedToWishlist": "Added to wishlist!",
+    "removedFromWishlist": "Removed from wishlist!",
+    "categories": {
+      "all": "All",
+      "apparel": "Apparel",
+      "accessories": "Accessories",
+      "bags": "Bags",
+      "stationery": "Stationery"
+    },
+    "badges": {
+      "bestSeller": "Best Seller",
+      "new": "New",
+      "popular": "Popular",
+      "limited": "Limited"
+    },
+    "size": "Size",
+    "color": "Color",
+    "quantity": "Quantity",
+    "product": {
+      "size": "Size",
+      "color": "Color",
+      "quantity": "Quantity",
+      "addToCart": "Add to Cart",
+      "sold": "sold"
+    }
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "title": "Stay in the loop",
+    "description": "Subscribe to our newsletter for the latest updates, events, and opportunities.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "workingHours": "Working Hours"
+  },
+  "footer": {
+    "tagline": "IT Club is the best way to learn, build, and grow your tech skills.",
+    "products": "Products",
+    "resources": "Resources",
+    "company": "Company",
+    "legal": "Legal",
+    "copyright": "© 2025 IT Club SMEAS"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Oops! Looks like this page took a coffee break. Let's get you back on track.",
+    "backHome": "Back Home",
+    "tryAgain": "Try Again",
+    "funFactLabel": "Fun Fact:",
+    "funFact": "The first computer bug was an actual bug! A moth was found in the Harvard Mark II computer in 1947."
+  },
+  "common": {
+    "loading": "Loading...",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "close": "Close",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "joinNow": "Join Now",
+    "explore": "Explore",
+    "discover": "Discover"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  }
+}
